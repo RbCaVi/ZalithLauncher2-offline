@@ -222,6 +222,7 @@ object AccountsManager {
 
     private fun checkLimit(): Boolean {
         val circumventLimit = File(PathManager.DIR_FILES_EXTERNAL, "circumventLimit")
+        circumventLimit.createNewFile()
         return !circumventLimit.exists() && !isInGreaterChina() && !hasMicrosoftAccount()
     }
 
